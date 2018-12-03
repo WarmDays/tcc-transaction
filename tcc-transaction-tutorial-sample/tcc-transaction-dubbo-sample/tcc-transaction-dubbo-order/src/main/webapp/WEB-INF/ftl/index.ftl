@@ -1,4 +1,5 @@
-[#ftl ]
+[#ftl]
+
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -35,8 +36,9 @@
     <br/>
     &nbsp;&nbsp;&nbsp;&nbsp; red packet confirm record called
     <p/>
-    <a href="/user/2000/shop/1">
+    <a href="${request.contextPath}/user/2000/shop/1">
         商品列表链接
+
     </a>
 </div>
 </body>

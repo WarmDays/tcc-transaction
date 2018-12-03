@@ -14,7 +14,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.ContextLoader;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.support.RequestContext;
+import org.springframework.web.servlet.support.RequestContextUtils;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.math.BigDecimal;
@@ -89,8 +94,7 @@ public class OrderController {
 
         String merchantOrderNo = placeOrderService.placeOrder(request.getPayerUserId(), request.getShopId(),
                 request.getProductQuantities(), request.getRedPacketPayAmount());
-
-        return new RedirectView("/payresult/" + merchantOrderNo);
+        return new RedirectView("/order/payresult/" + merchantOrderNo);
     }
 
     @RequestMapping(value = "/payresult/{merchantOrderNo}", method = RequestMethod.GET)

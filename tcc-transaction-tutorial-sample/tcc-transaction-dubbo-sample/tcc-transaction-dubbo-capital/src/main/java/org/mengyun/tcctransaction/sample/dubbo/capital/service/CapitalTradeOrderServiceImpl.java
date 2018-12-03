@@ -33,6 +33,8 @@ public class CapitalTradeOrderServiceImpl implements CapitalTradeOrderService {
     @Transactional
     public String record(CapitalTradeOrderDto tradeOrderDto) {
 
+        int i = 10/0;
+
         try {
             Thread.sleep(1000l);
         } catch (InterruptedException e) {
